@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content%}
+<br>
+
+{% if eror %}
+{{eror}}
+<br><br>
+{% endif %}
+
+
+<h1>Login</h1>
+<form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+<!--  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" name="email"  aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>-->
+  <div class="form-group">
+    <label for="exampleInputEmail1">user name</label>
+    <input type="text" class="form-control" name="username" placeholder="Enter user name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+{% endblock %}
